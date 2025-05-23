@@ -7,15 +7,13 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">      {/* Sticky Header with slide-down animation */}
       <header className="bg-deep-purple-800 text-white sticky top-0 z-50 shadow-lg animate-slide-down">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              {/* Logo with pulse animation */}
-              <Link href="/" className="text-2xl font-bold hover:animate-pulse transition-all duration-300 hover:text-lime-green-400">
-                Mojo's Hemp House
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">          <div className="flex justify-between h-16">
+            <div className="flex items-center">              {/* Logo with pulse animation */}
+              <Link href="/" className="flex items-center hover:animate-pulse transition-all duration-300 group">
+                <img src="/logo.png" alt="Mojo Xotics Logo" className="h-12 w-auto mr-3" />
+                <span className="text-2xl font-bold group-hover:text-lime-green-400">Mojo Xotics</span>
               </Link>
             </div>
-            
             {/* Desktop Navigation with hover animations */}
             <div className="hidden md:flex items-center space-x-8">
               <Link href="/" className="hover:text-lime-green-300 transition-all duration-300 hover:scale-105 transform neon-hover">
