@@ -28,26 +28,32 @@ export default function Contact() {
     });
   };
 
-  return (
-    <Layout>
-      <section className="py-12">
+  return (    <Layout>
+      <section className="py-12 bg-gradient-to-br from-deep-purple-800 via-deep-purple-700 to-deep-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h1 className="text-4xl font-bold text-center mb-12 text-lime-green-400 animate-neon-pulse">
             Contact Us
           </h1>
+        </div>
+      </section>
 
+      {/* Purple Gradient Divider */}
+      <div className="h-4 gradient-divider"></div>
+
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <div className="bg-green-600 text-white rounded-lg p-8 mb-8">
-                <h2 className="text-2xl font-bold mb-6">Visit Mojo's Hemp House</h2>
+              <div className="bg-gradient-to-br from-deep-purple-700 to-deep-purple-800 text-white rounded-lg p-8 mb-8 shadow-lg">
+                <h2 className="text-2xl font-bold mb-6 text-lime-green-400">Visit Mojo's Hemp House</h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <span className="text-2xl mr-4">📍</span>
                     <div>
                       <h3 className="font-semibold mb-1">Location</h3>
                       <p>Indianapolis, Indiana</p>
-                      <p className="text-green-100">In the heart of Indy</p>
+                      <p className="text-deep-purple-200">In the heart of Indy</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -74,43 +80,39 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Why Visit */}
-              <div className="bg-gray-50 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">Why Visit Our Store?</h3>
+              </div>              {/* Why Visit */}
+              <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-100">
+                <h3 className="text-xl font-semibold mb-4 text-lime-green-600">Why Visit Our Store?</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
+                    <span className="text-lime-green-600 mr-2">✓</span>
                     <span>Free personalized consultations with our CBD experts</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
+                  </li>                  <li className="flex items-start">
+                    <span className="text-lime-green-600 mr-2">✓</span>
                     <span>Sample products before you buy</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
+                    <span className="text-lime-green-600 mr-2">✓</span>
                     <span>Exclusive in-store promotions and discounts</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
+                    <span className="text-lime-green-600 mr-2">✓</span>
                     <span>Educational materials and dosing guidance</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
+                    <span className="text-lime-green-600 mr-2">✓</span>
                     <span>Immediate product availability - no waiting for shipping</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <h2 className="text-2xl font-semibold mb-6">Send Us a Message</h2>
+            {/* Contact Form */}            <div>
+              <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                <h2 className="text-2xl font-semibold mb-6 text-lime-green-600">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-deep-purple-700 mb-1">
                       Name
                     </label>
                     <input
@@ -120,12 +122,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-green-500 focus:border-transparent transition"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-deep-purple-700 mb-1">
                       Email
                     </label>
                     <input
@@ -135,12 +137,10 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-green-500 focus:border-transparent transition"
                     />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  </div>                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-deep-purple-700 mb-1">
                       Phone (Optional)
                     </label>
                     <input
@@ -149,12 +149,12 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-green-500 focus:border-transparent transition"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-deep-purple-700 mb-1">
                       Message
                     </label>
                     <textarea
@@ -164,14 +164,14 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows="4"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-green-500 focus:border-transparent transition"
                       placeholder="How can we help you? Ask about products, dosing, or schedule a consultation..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+                    className="w-full bg-lime-green-500 text-deep-purple-900 py-3 rounded-lg font-semibold hover:bg-lime-green-400 transition neon-hover shadow-lg"
                   >
                     Send Message
                   </button>

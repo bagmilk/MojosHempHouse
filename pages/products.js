@@ -90,12 +90,11 @@ export default function Products() {
   const filteredProducts = selectedCategory === 'all' 
     ? products 
     : products.filter(p => p.category === selectedCategory);
-
   return (
     <Layout>
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gradient-to-br from-deep-purple-800 via-deep-purple-700 to-deep-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+          <h1 className="text-4xl font-bold text-center mb-8 text-lime-green-400 animate-neon-pulse">
             Our Products
           </h1>
           
@@ -104,23 +103,27 @@ export default function Products() {
             {categories.map(cat => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
+                onClick={() => setSelectedCategory(cat.id)}                className={`px-6 py-2 rounded-full font-semibold transition neon-hover ${
                   selectedCategory === cat.id
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? 'bg-lime-green-500 text-deep-purple-900 shadow-lg'
+                    : 'bg-white text-deep-purple-800 hover:bg-lime-green-100'
                 }`}
               >
                 {cat.name}
               </button>
-            ))}
-          </div>
+            ))}          </div>
+        </div>
+      </section>
 
+      {/* Purple Gradient Divider */}
+      <div className="h-4 gradient-divider"></div>
+
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Product Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map(product => (
-              <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-                <div className="h-48 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+            {filteredProducts.map(product => (              <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition border border-gray-100 hover:border-lime-green-200">
+                <div className="h-48 bg-gradient-to-br from-lime-green-100 to-lime-green-200 flex items-center justify-center">
                   <div className="text-center">
                     <span className="text-4xl mb-2 block">
                       {product.category === 'tinctures' && '🌿'}
@@ -128,52 +131,49 @@ export default function Products() {
                       {product.category === 'topicals' && '🧴'}
                       {product.category === 'edibles' && '🍯'}
                     </span>
-                    <span className="text-green-700 font-semibold">{product.strength}</span>
+                    <span className="text-deep-purple-700 font-semibold">{product.strength}</span>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-deep-purple-800">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   
                   <div className="mb-4">
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Benefits:</p>
+                    <p className="text-sm font-semibold text-deep-purple-700 mb-2">Benefits:</p>
                     <div className="flex flex-wrap gap-2">
                       {product.benefits.map((benefit, idx) => (
-                        <span key={idx} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                        <span key={idx} className="text-xs bg-lime-green-100 text-lime-green-700 px-2 py-1 rounded">
                           {benefit}
                         </span>
                       ))}
                     </div>
                   </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-green-600">{product.price}</span>
-                    <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+                    <div className="flex justify-between items-center">
+                    <span className="text-2xl font-bold text-lime-green-600">{product.price}</span>
+                    <button className="bg-lime-green-500 text-deep-purple-900 px-4 py-2 rounded hover:bg-lime-green-400 transition neon-hover font-semibold">
                       Add to Cart
                     </button>
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Info Section */}
-          <div className="mt-16 bg-white rounded-lg shadow p-8">
-            <h2 className="text-2xl font-bold mb-4 text-center">Quality You Can Trust</h2>
+          </div>          {/* Info Section */}
+          <div className="mt-16 bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <h2 className="text-2xl font-bold mb-4 text-center text-lime-green-600">Quality You Can Trust</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
+              <div className="hover:transform hover:scale-105 transition-all duration-300">
                 <div className="text-3xl mb-2">🔬</div>
-                <h3 className="font-semibold mb-2">Lab Tested</h3>
+                <h3 className="font-semibold mb-2 text-deep-purple-800">Lab Tested</h3>
                 <p className="text-gray-600">All products are third-party lab tested for purity and potency.</p>
               </div>
-              <div>
+              <div className="hover:transform hover:scale-105 transition-all duration-300">
                 <div className="text-3xl mb-2">🌱</div>
-                <h3 className="font-semibold mb-2">Organic Hemp</h3>
+                <h3 className="font-semibold mb-2 text-deep-purple-800">Organic Hemp</h3>
                 <p className="text-gray-600">Sourced from organically grown hemp farms in the USA.</p>
               </div>
-              <div>
+              <div className="hover:transform hover:scale-105 transition-all duration-300">
                 <div className="text-3xl mb-2">✅</div>
-                <h3 className="font-semibold mb-2">Legal & Safe</h3>
+                <h3 className="font-semibold mb-2 text-deep-purple-800">Legal & Safe</h3>
                 <p className="text-gray-600">All products contain less than 0.3% THC and are federally legal.</p>
               </div>
             </div>

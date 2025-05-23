@@ -34,10 +34,44 @@ body {
   }
 }
 
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animate-slide-down {
   animation: slide-down 0.3s ease-out;
 }
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.gradient-divider {
+  background: linear-gradient(-45deg, #4c1d95, #7c3aed, #8b5cf6, #a78bfa);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.neon-hover {
+  transition: all 0.3s ease;
+}
+
+.neon-hover:hover {
+  box-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+  transform: scale(1.05);
 }
